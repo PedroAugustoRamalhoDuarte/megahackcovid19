@@ -3,7 +3,7 @@ let Schema = mongoose.Schema;
 
 let DrugSchema = new Schema({
     name: {type: String, required: true, max: 100},
-    type: {type: String, required: true},
+    drugType: {type: String, required: true},
     description: {type: String, required: true}
 });
 

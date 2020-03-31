@@ -32,7 +32,8 @@ module.exports = {
         jwt.verify(token, "1234", function (err, decoded) {
             if (err) return response.status(500).send({auth: false, message: 'Failed to authenticate token.'});
 
-            let user = await User.findOne({_id: decoded.id});
+            // let user = await User.findOne({_id: decoded.id});
+            let user = User.findOne({_id: decoded.id});
             return response.json(user);
         });
 
