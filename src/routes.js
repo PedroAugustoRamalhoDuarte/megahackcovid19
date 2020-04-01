@@ -2,6 +2,7 @@ const {Router} = require('express');
 
 // Controllers
 const UserController = require('./controllers/UserController');
+const DrugController = require('./controllers/DrugController');
 const routes = Router();
 
 // Devs Routes
@@ -15,6 +16,12 @@ routes.get('/me', UserController.me);
 // Faz o login do usuário passando de parametros JSON o email e a senha.
 // Retorna um token de login, usado na função me
 routes.post('/login', UserController.login);
+
+// Drugs Routes
+routes.post('/createDrug', DrugController.drugCreate);
+routes.get('/:id', DrugController.drugDetails);
+routes.put('/:id/update', DrugController.drugUpdate);
+routes.delete('/:id/delete', DrugController.drugDelete);
 
 
 module.exports = routes;
