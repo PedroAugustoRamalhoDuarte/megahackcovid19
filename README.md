@@ -43,6 +43,6 @@ O projeto está divido em duas pastas:
 <object  
 type="application/pdf" width="700px" height="700px">
     <embed src="./cartilha/HackathonCoronavirus3.0.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="./cartilha/HackathonCoronavirus3.0.pdf">Download PDF</a>.</p>
+        <p>This browser does not support PDFs. Please download the PDF to view it. <a href="./cartilha/HackathonCoronavirus3.0.pdf">Click here!</a>.</p>
     </embed>
 </object>
