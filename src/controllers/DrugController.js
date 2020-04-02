@@ -1,41 +1,44 @@
 const Drug = require('../models/Drug');
 
 
-exports.drugCreate = function (req, res) {
-    var drug = new Drug(
-        {
-            name: req.body.name,
-            drugType: req.body.drugType,
-            description: req.body.description
-        }
-    );
+module.exports = {
 
-    drug.save(function (err) {
-        if (err) return console.log(err);
-        
-        res.send('Drug added successfully');
-    })
-};
+    async drugCreate(req, res) {
+        var drug = new Drug(
+            {
+                name: req.body.name,
+                drugType: req.body.drugType,
+                description: req.body.description
+            }
+        );
 
-exports.drugDetails = function (req, res) {
-    Drug.findById(req.params.id, function (err, drug) {
-        if (err) return console.log(err);
+        drug.save(function (err) {
+            if (err) return console.log(err);
 
-        res.send(drug);
-    })
-};
+            res.send('Drug added successfully');
+        })
+    },
 
-exports.drugUpdate = function (req, res) {
-    Drug.findByIdAndUpdate(req.params.id, {$set: req.body}, function (err, drug) {
-        if (err) return next(err);
+    async drugDetails(req, res) {
+        Drug.findById(req.params.id, function (err, drug) {
+            if (err) return console.log(err);
 
-        res.send('Drug updated.');
-    });
-};
+            res.send(drug);
+        })
+    },
 
-exports.drugDelete = function (req, res) {
-    Drug.findByIdAndRemove(req.params.id, function (err) {
-        if (err) return next(err);
-        res.send('Deleted successfully!');
-    })
+    async drugUpdate(req, res) {
+        Drug.findByIdAndUpdate(req.params.id, {$set: req.body}, function (err, drug) {
+            if (err) return next(err);
+
+            res.send('Drug updated.');
+        });
+    },
+
+    async drugDelete(req, res) {
+        Drug.findByIdAndRemove(req.params.id, function (err) {
+            if (err) return next(err);
+            res.send('Deleted successfully!');
+        })
+    }
 };

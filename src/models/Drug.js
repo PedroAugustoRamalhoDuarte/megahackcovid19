@@ -4,7 +4,7 @@ let Schema = mongoose.Schema;
 let DrugSchema = new Schema({
     name: {type: String, required: true, max: 100},
     drugType: {type: String, required: true},
-    description: {type: String, required: true}
+    description: {type: String, required: true},
 });
 
 
