@@ -10,12 +10,14 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
 
-import Navbar from "./components/layout/Navbar";
+import Navbar from "./components/layout/Navigation/Navbar";
+import MainNavigation from "./components/layout/Navigation/MainNavigation";
 import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
+import ClientLandPage from "./components/layout/ClienteLayout/ClientLandpage";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -36,18 +38,19 @@ if (localStorage.jwtToken) {
     window.location.href = "./login";
   }
 }
+
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
         <Router>
           <div className="App">
-            <Navbar />
+            <MainNavigation/>
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             <Switch>
-              <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              <PrivateRoute exact path="/clientLandPage" component={ClientLandPage} />
             </Switch>
           </div>
         </Router>
