@@ -4,7 +4,7 @@ class DrugStore extends Component {
     render() {
         return (
             <div>
-                <h1 className="text-center pt-5"> Fármacia </h1>
+                <h1 className="text-center pt-5"> Fármacia DocBee</h1>
                 <div className="row">
                     <div className="col statistic-box box shadow bg-white rounded h-100 m-5 p-3">
                         <h4>Número de medicamentos vendidos</h4>

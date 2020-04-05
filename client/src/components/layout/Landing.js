@@ -36,7 +36,7 @@ class Landing extends Component {
                     <div className="container">
                         <div className="row align-items-center">
                             <div className="col-lg-6 order-lg-2">
-                                <div className="p-5"><img className="rounded-circle img-fluid" src={VideoCallImage}/>
+                                <div className="p-5"><img className="rounded-circle img-fluid" src={VideoCallImage} alt="Imagem de video chaamada"/>
                                 </div>
                             </div>
                             <div className="col-lg-6 order-lg-1">
@@ -54,7 +54,7 @@ class Landing extends Component {
                     <div className="container">
                         <div className="row align-items-center">
                             <div className="col-lg-6 order-lg-1">
-                                <div className="p-5"><img className="rounded-circle img-fluid" src={PrescriptionImage}/>
+                                <div className="p-5"><img className="rounded-circle img-fluid" src={PrescriptionImage} alt="Prescrição de medicamentos"/>
                                 </div>
                             </div>
                             <div className="col-lg-6 order-lg-2">
@@ -74,7 +74,7 @@ class Landing extends Component {
                     <div className="container">
                         <div className="row align-items-center">
                             <div className="col-lg-6 order-lg-2">
-                                <div className="p-5"><img className="rounded-circle img-fluid" src={CoinsImage}/>
+                                <div className="p-5"><img className="rounded-circle img-fluid" src={CoinsImage} alt="Imagem representando ofertas"/>
                                 </div>
                             </div>
                             <div className="col-lg-6 order-lg-1">
@@ -93,7 +93,7 @@ class Landing extends Component {
                     <div className="container">
                         <div className="row align-items-center">
                             <div className="col-lg-6 order-lg-1">
-                                <div className="p-5"><img className="rounded-circle img-fluid" src={DeliveryImage}/>
+                                <div className="p-5"><img className="rounded-circle img-fluid" src={DeliveryImage} alt="Imagem de um caminhão representando entregas"/>
                                 </div>
                             </div>
                             <div className="col-lg-6 order-lg-2">
@@ -110,7 +110,7 @@ class Landing extends Component {
                     <div className="container">
                         <div className="row align-items-center">
                             <div className="col-lg-6 order-lg-2">
-                                <div className="p-5"><img className="rounded-circle img-fluid" src={NotificationImage}/>
+                                <div className="p-5"><img className="rounded-circle img-fluid" src={NotificationImage} alt="Imagem de um sno com notificação"/>
                                 </div>
                             </div>
                             <div className="col-lg-6 order-lg-1">
@@ -128,7 +128,7 @@ class Landing extends Component {
                     <div className="container">
                         <div className="row align-items-center">
                             <div className="col-lg-6 order-lg-1">
-                                <div className="p-5"><img className="rounded-circle img-fluid" src={CloudImage}/>
+                                <div className="p-5"><img className="rounded-circle img-fluid" src={CloudImage} alt="Imagem representando armazenamento na nuvem"/>
                                 </div>
                             </div>
                             <div className="col-lg-6 order-lg-2">
