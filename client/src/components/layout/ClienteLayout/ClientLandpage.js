@@ -5,6 +5,8 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 import "./ClientLayout.css";
+import Remedio from "../../../images/medicine.png";
+import Pharmacy from "../../../images/pharmacy.png";
 
 // Navigation
 function Artefatos() {
@@ -25,7 +27,7 @@ function Artefatos() {
       </div>
 
       <div className="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
-        <div className="bg-light mr-md-auto pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div className="bg-light ml-md-5 mr-md-auto pt-3 px-3 pt-md-4 px-md-4 text-center overflow-hidden">
           <div className="my-5 p-5">
             <h2 className="display-5">Análise dos remédios utilizados</h2>
           </div>
@@ -36,24 +38,20 @@ function Artefatos() {
               height: "300px",
               borderRadius: "21px 21px 0 0",
             }}
-          ></div>
+          >
+          <div>
+          <Link to={"/analiseRemedio"}>
+            <img
+              className="remedio-image"
+              src={Remedio}
+              alt="remedio logo"
+            />
+          </Link>
         </div>
-
-        <div className="bg-dark mr-md-auto pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
-          <div className="my-5 py-5">
-            <h2 className="display-5">Histórico de consultas</h2>
           </div>
-          <div
-            className="bg-light shadow-sm mx-auto"
-            style={{
-              width: "80%",
-              height: "300px",
-              borderRadius: "21px 21px 0 0",
-            }}
-          ></div>
         </div>
 
-        <div className="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div className="bg-light mr-md-5 pt-3 px-3 pt-md-4 px-md-4 text-center overflow-hidden">
           <div className="my-5 p-5">
             <h2 className="display-5">Análise de farmácias preferidas</h2>
           </div>
@@ -64,7 +62,17 @@ function Artefatos() {
               height: "300px",
               borderRadius: "21px 21px 0 0",
             }}
-          ></div>
+          >
+            <div>
+              <Link to={"/analiseFarmacia"}>
+                <img
+                  className="remedio-image"
+                  src={Pharmacy}
+                  alt="pharmacy logo"
+                />
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -132,7 +140,7 @@ function Artefatos() {
   );
 }
 
-class Login extends Component {
+class ClientLandpage extends Component {
   onLogoutClick = (e) => {
     e.preventDefault();
     this.props.logoutUser();
@@ -143,34 +151,15 @@ class Login extends Component {
   };
 
   render() {
-    const { user } = this.props.auth;
     return (
       <div>
         <Artefatos />
-        <div style={{ height: "75vh" }} className="container valign-wrapper">
-          <div className="row">
-            <div className="landing-copy col s12 center-align">
-              <button
-                style={{
-                  width: "150px",
-                  borderRadius: "3px",
-                  letterSpacing: "1.5px",
-                  marginTop: "1rem",
-                }}
-                onClick={this.onLogoutClick}
-                className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-              >
-                Logout
-              </button>
-            </div>
-          </div>
-        </div>
       </div>
     );
   }
 }
 
-Login.propTypes = {
+ClientLandpage.propTypes = {
   logoutUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
 };
@@ -179,6 +168,6 @@ const mapStateToProps = (state) => ({
   auth: state.auth,
 });
 
-export default connect(mapStateToProps, { logoutUser })(Login);
+export default connect(mapStateToProps, { logoutUser })(ClientLandpage);
 
 // export default Login;

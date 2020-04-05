@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
@@ -10,14 +10,16 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
 
-import Navbar from "./components/layout/Navigation/Navbar";
 import MainNavigation from "./components/layout/Navigation/MainNavigation";
 import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
-import Dashboard from "./components/dashboard/Dashboard";
 import ClientLandPage from "./components/layout/ClienteLayout/ClientLandpage";
+import MedicoMainLayout from "./components/layout/MedicoLayout/MedicoMainLayout";
+import ClientProfilePage from "./components/layout/ClienteLayout/ClientProfile";
+import AnaliseRemedio from "./components/layout/ClienteLayout/Analises/AnaliseRemedio";
+import CustomRoute from "./components/CustomRoute"
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -45,12 +47,37 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App">
-            <MainNavigation/>
+            <MainNavigation />
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             <Switch>
-              <PrivateRoute exact path="/clientLandPage" component={ClientLandPage} />
+              <PrivateRoute
+                exact
+                path="/clientLandPage"
+                component={ClientLandPage}
+              />
+            </Switch>
+            <Switch>
+              <PrivateRoute
+                exact
+                path="/clienteProfile"
+                component={ClientProfilePage}
+              />
+            </Switch>
+            <Switch>
+              <PrivateRoute
+                exact
+                path="/analiseRemedio"
+                component={AnaliseRemedio}
+              />
+            </Switch>
+            <Switch>
+              <PrivateRoute
+                exact
+                path="/medicoLandPage"
+                component={MedicoMainLayout}
+              />
             </Switch>
           </div>
         </Router>

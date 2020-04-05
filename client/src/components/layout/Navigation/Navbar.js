@@ -2,12 +2,18 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import { logoutUser } from "../../../actions/authActions";
 
 import "./Navbar.css";
 
 function MenuCliente() {
   return (
     <ul className="navbar-nav ml-auto">
+      <li className="nav-item">
+        <Link className="nav-link" to={"/clientLandpage"}>
+          Dashboard Menu
+        </Link>
+      </li>
       <li className="nav-item">
         <Link className="nav-link" to={"/"}>
           Minhas receitas
@@ -29,7 +35,7 @@ function MenuCliente() {
         </Link>
       </li>
       <li className="nav-item">
-        <Link className="nav-link" to={"/"}>
+        <Link className="nav-link" to={"/clienteProfile"}>
           Meu perfil
         </Link>
       </li>
@@ -73,6 +79,7 @@ const Navbar = ({ component: Component, auth, ...rest }) => {
 // export default Navbar;
 
 Navbar.propTypes = {
+  logoutUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
 };
 
@@ -80,4 +87,4 @@ const mapStateToProps = (state) => ({
   auth: state.auth,
 });
 
-export default connect(mapStateToProps)(Navbar);
+export default connect(mapStateToProps, { logoutUser })(Navbar);

@@ -1,0 +1,15 @@
+.chart-row {
+  margin-bottom: 15px;
+}
+.inline-chart {
+  display: inline-block;
+  width: 48%;
+  margin-left: 1%;
+}
+
+.title-h1>h1 {
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+}
