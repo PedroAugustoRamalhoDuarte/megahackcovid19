@@ -1,4 +1,5 @@
 module.exports = {
-  mongoURI: "mongodb+srv://igor:zaZarzuk7p5UiThX@cluster0-v1q4i.mongodb.net/hack?retryWrites=true&w=majority",
+  mongoURI: "mongodb+srv://igor:RV3vR44yXYhedmiT@cluster0-v1q4i.mongodb.net/dataBaseCovid?retryWrites=true&w=majority",
   secretOrKey: "secret"
 };
+
