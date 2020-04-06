@@ -15,8 +15,8 @@ function MenuCliente() {
         </Link>
       </li>
       <li className="nav-item">
-        <Link className="nav-link" to={"/"}>
-          Minhas receitas
+        <Link className="nav-link" to={"/remedioControl"}>
+          Meus remédios
         </Link>
       </li>
       <li className="nav-item">
@@ -43,13 +43,25 @@ function MenuCliente() {
   );
 }
 
+function MenuMedico() {
+  return (
+    <ul className="navbar-nav ml-auto">
+      <li className="nav-item">
+        <Link className="nav-link" to={"/medicoLandPage"}>
+          Meu perfil
+        </Link>
+      </li>
+    </ul>
+  );
+}
+
 const Navbar = ({ component: Component, auth, ...rest }) => {
   return (
     <div className="navbar-fixed">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container">
           <Link className="navbar-brand" to={"/"}>
-            Splash!
+            DocBee
           </Link>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul className="navbar-nav ml-auto">
@@ -67,7 +79,8 @@ const Navbar = ({ component: Component, auth, ...rest }) => {
                   </Link>
                 </li>
               )}
-              {auth.isAuthenticated === true && <MenuCliente />}
+              {auth.isAuthenticated === true && auth.user.role === 'paciente' && <MenuCliente />}
+              {auth.isAuthenticated === true && auth.user.role === 'medico' && <MenuMedico />}
             </ul>
           </div>
         </div>

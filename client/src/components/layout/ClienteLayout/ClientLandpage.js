@@ -169,5 +169,3 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps, { logoutUser })(ClientLandpage);
-
-// export default Login;

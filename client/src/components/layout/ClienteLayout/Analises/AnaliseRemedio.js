@@ -54,23 +54,23 @@ const chartData = [
 ];
 
 const chartDataThree = [
-    {
-      label: "Imunologista",
-      value: "290",
-    },
-    {
-      label: "Ortopedista",
-      value: "260",
-    },
-    {
-      label: "Alergista",
-      value: "180",
-    },
-    {
-      label: "Oncologia",
-      value: "140",
-    }
-  ];
+  {
+    label: "Imunologista",
+    value: "290",
+  },
+  {
+    label: "Ortopedista",
+    value: "260",
+  },
+  {
+    label: "Alergista",
+    value: "180",
+  },
+  {
+    label: "Oncologia",
+    value: "140",
+  }
+];
 
 // Create a JSON object to store the chart configurations
 const chartConfigs = {
@@ -136,65 +136,123 @@ const chartConfigTwo = {
 };
 
 const chartConfigThree = {
-    type: "column2d",
-    renderAt: "chartContainer",
-    width: "550",
-    height: "350",
-    dataFormat: "json",
+  type: "column2d",
+  renderAt: "chartContainer",
+  width: "550",
+  height: "350",
+  dataFormat: "json",
+  chart: {
+    borderColor: "#666666",
+    borderThickness: "4",
+    borderAlpha: "80",
+  },
+  dataSource: {
+    // Chart Configuration
     chart: {
-      borderColor: "#666666",
-      borderThickness: "4",
-      borderAlpha: "80",
+      caption: "Dinheiro gasto com cada consulta [2019-20]", //Set the chart caption
+      xAxisName: "Consultas", //Set the x-axis name
+      yAxisName: "R$", //Set the y-axis name
+      theme: "fusion", //Set the theme for your chart
     },
-    dataSource: {
-      // Chart Configuration
-      chart: {
-        caption: "Dinheiro gasto com cada consulta [2019-20]", //Set the chart caption
-        xAxisName: "Consultas", //Set the x-axis name
-        yAxisName: "R$", //Set the y-axis name
-        theme: "fusion", //Set the theme for your chart
-      },
-      // Chart Data - from step 2
-      data: chartDataThree,
-    },
-  };
+    // Chart Data - from step 2
+    data: chartDataThree,
+  },
+};
 
 class AnaliseRemedio extends Component {
   render() {
     return (
-      <Container>
-        <div className="main-div">
-          <div className="first-box position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-            <div className="product-device shadow-sm d-none d-md-block"></div>
-            <div className="product-device product-device-2 shadow-sm d-none d-md-block">
-              <div className="container-fluid min-vw-100 p-5">
-                <div className="chart-container">
-                  <ReactFC {...chartConfigs} />
-                </div>
+      <div className="main-div">
+        <div className="first-box position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+          <div className="product-device shadow-sm d-none d-md-block"></div>
+          <div className="product-device product-device-2 shadow-sm d-none d-md-block">
+            <div className="container-fluid min-vw-100 p-5">
+              <div className="chart-container">
+                <ReactFC {...chartConfigs} />
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="container">
-            <div class="row">
-              <div class="col-sm-6">
-                <div className="container-fluid">
-                  <div className="chart-container">
-                    <ReactFC {...chartConfigTwo} />
-                  </div>
+        <div className="container">
+          <div className="row">
+            <div className="col-sm-6">
+              <div className="container-fluid">
+                <div className="chart-container">
+                  <ReactFC {...chartConfigTwo} />
                 </div>
               </div>
-              <div class="col-sm-6">
-                <div className="container-fluid">
-                  <div className="chart-container">
-                    <ReactFC {...chartConfigThree} />
-                  </div>
+            </div>
+            <div className="col-sm-6">
+              <div className="container-fluid">
+                <div className="chart-container">
+                  <ReactFC {...chartConfigThree} />
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </Container>
+        <footer className="container py-5">
+          <div className="row">
+            <div className="col-12 col-md">
+              <p>Splash!</p>
+              <small className="d-block mb-3 text-muted">© 2020-2021</small>
+            </div>
+
+            <div className="col-6 col-md">
+              <h5>Sobre</h5>
+              <ul className="list-unstyled text-small">
+                <li>
+                  <Link className="text-muted" to={"/"}>
+                    Time
+                </Link>
+                </li>
+                <li>
+                  <Link className="text-muted" to={"/"}>
+                    Localização
+                </Link>
+                </li>
+                <li>
+                  <Link className="text-muted" to={"/"}>
+                    Privacidade
+                </Link>
+                </li>
+                <li>
+                  <Link className="text-muted" to={"/"}>
+                    Termos
+                </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div className="col-6 col-md">
+              <h5>Contato</h5>
+              <ul className="list-unstyled text-small">
+                <li>
+                  <Link className="text-muted" to={"/"}>
+                    Instagram
+                </Link>
+                </li>
+                <li>
+                  <Link className="text-muted" to={"/"}>
+                    Facebook
+                </Link>
+                </li>
+                <li>
+                  <Link className="text-muted" to={"/"}>
+                    Github
+                </Link>
+                </li>
+                <li>
+                  <Link className="text-muted" to={"/"}>
+                    Youtube
+                </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </footer>
+      </div>
     );
   }
 }
