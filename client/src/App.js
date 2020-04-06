@@ -20,6 +20,9 @@ import MedicoMainLayout from "./components/layout/MedicoLayout/MedicoMainLayout"
 import ClientProfilePage from "./components/layout/ClienteLayout/ClientProfile";
 import AnaliseRemedio from "./components/layout/ClienteLayout/Analises/AnaliseRemedio";
 import RemedioControl from './components/layout/ClienteLayout/RemedioControl/MainRemedioControl'
+import Dashboard from "./components/dashboard/Dashboard";
+import DrugStore from "./components/dashboard/DrugStore";
+import Calendar from "./components/calendar/Calendar";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -51,6 +54,8 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/farmacia" component={DrugStore} />
+            <Route exact path="/calendar" component={Calendar} />
             <Switch>
               <PrivateRoute
                 condition="paciente"

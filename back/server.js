@@ -5,12 +5,13 @@ const passport = require("passport");
 
 const users = require("./routes/user");
 const drug = require('./routes/drug');
+const email = require('./routes/email');
 
 const app = express();
 
 // Bodyparser middleware
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // DB Config
 const db = require("./config/keys").mongoURI;
@@ -33,6 +34,7 @@ require("./config/passport")(passport);
 // Routes
 app.use("/users", users);
 app.use("/drug", drug);
+app.use("/emails", email);
 
 const port = process.env.PORT || 5000;
 
