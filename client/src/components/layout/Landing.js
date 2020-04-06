@@ -20,8 +20,8 @@ class Landing extends Component {
                 <header className="masthead text-center text-white">
                     <div className="masthead-content">
                         <div className="container">
-                            <h1 className="masthead-heading mb-0"><span className="">MEU</span><span
-                                className="">MED</span></h1>
+                            <h1 className="masthead-heading mb-0"><span className="">DOC</span><span
+                                className="">BEE</span></h1>
                             <h2 className="masthead-subheading mb-0">Venha fazer parte dessa transformação!</h2><a
                             className="btn btn-primary btn-xl rounded-pill mt-5" role="button" href="#">Conheça Mais</a>
                         </div>

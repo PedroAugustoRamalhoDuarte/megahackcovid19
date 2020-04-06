@@ -23,6 +23,7 @@ import RemedioControl from './components/layout/ClienteLayout/RemedioControl/Mai
 import Dashboard from "./components/dashboard/Dashboard";
 import DrugStore from "./components/dashboard/DrugStore";
 import Calendar from "./components/calendar/Calendar";
+import FarmaciaPerfil from './components/layout/FarmaciaLayout/FarmaciaPerfil'
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -54,8 +55,6 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
-            <Route exact path="/farmacia" component={DrugStore} />
-            <Route exact path="/calendar" component={Calendar} />
             <Switch>
               <PrivateRoute
                 condition="paciente"
@@ -86,6 +85,24 @@ class App extends Component {
                 exact
                 path="/medicoLandPage"
                 component={MedicoMainLayout}
+              />
+              <PrivateRoute
+                condition="medico"
+                exact
+                path="/calendar"
+                component={Calendar}
+              />
+              <PrivateRoute
+                condition="farmacia"
+                exact
+                path="/farmacia"
+                component={DrugStore}
+              />
+              <PrivateRoute
+                condition="farmacia"
+                exact
+                path="/farmaciaPerfil"
+                component={FarmaciaPerfil}
               />
             </Switch>
           </div>

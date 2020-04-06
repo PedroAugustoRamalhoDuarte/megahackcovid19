@@ -47,8 +47,30 @@ function MenuMedico() {
   return (
     <ul className="navbar-nav ml-auto">
       <li className="nav-item">
+        <Link className="nav-link" to={"/calendar"}>
+          Calendário
+        </Link>
+      </li>
+      <li className="nav-item">
         <Link className="nav-link" to={"/medicoLandPage"}>
           Meu perfil
+        </Link>
+      </li>
+    </ul>
+  );
+}
+
+function MenuFarmacia() {
+  return (
+    <ul className="navbar-nav ml-auto">
+      <li className="nav-item">
+        <Link className="nav-link" to={"/farmacia"}>
+          Dashboard
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link" to={"/farmaciaPerfil"}>
+          Perfil
         </Link>
       </li>
     </ul>
@@ -81,6 +103,7 @@ const Navbar = ({ component: Component, auth, ...rest }) => {
               )}
               {auth.isAuthenticated === true && auth.user.role === 'paciente' && <MenuCliente />}
               {auth.isAuthenticated === true && auth.user.role === 'medico' && <MenuMedico />}
+              {auth.isAuthenticated === true && auth.user.role === 'farmacia' && <MenuFarmacia />}
             </ul>
           </div>
         </div>

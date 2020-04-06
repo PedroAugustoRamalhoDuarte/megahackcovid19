@@ -18,7 +18,6 @@ const PrivateRoute = ({ condition, component: Component, auth, ...rest }) => (
           auth.user.role === "paciente" ? (
             <Component {...props} />
           ) : (
-              console.log('Redirect 1'),
               <Redirect to="/" />
             )
         ) : (
@@ -26,16 +25,19 @@ const PrivateRoute = ({ condition, component: Component, auth, ...rest }) => (
               auth.user.role === "medico" ? (
                 <Component {...props} />
               ) : (
-                  console.log('Redirect 2'),
+                  <Redirect to="/" />
+                )
+            ) : condition === "farmacia" ? (
+              auth.user.role === "farmacia" ? (
+                <Component {...props} />
+              ) : (
                   <Redirect to="/" />
                 )
             ) : (
-                console.log('Redirect 3'),
-                <Redirect to="/" />
-              )
+                  <Redirect to="/" />
+                )
           )
       ) : (
-          console.log('Redirect 4'),
           <Redirect to="/" />
         )
     }

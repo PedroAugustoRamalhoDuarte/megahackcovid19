@@ -29,7 +29,12 @@ class Login extends Component {
                         (
                             this.props.history.push("/medicoLandPage")
                         ) : (
-                            this.props.history.push("/")
+                            this.props.auth.user.role === 'farmacia' ?
+                                (
+                                    this.props.history.push("/farmacia")
+                                ) : (
+                                    this.props.history.push("/")
+                                )
                         )
                 )
         }
@@ -45,7 +50,12 @@ class Login extends Component {
                         (
                             this.props.history.push("/medicoLandPage")
                         ) : (
-                            this.props.history.push("/")
+                            this.props.auth.user.role === 'farmacia' ?
+                                (
+                                    this.props.history.push("/farmacia")
+                                ) : (
+                                    this.props.history.push("/")
+                                )
                         )
                 )
         }
