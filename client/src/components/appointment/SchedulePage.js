@@ -19,7 +19,8 @@ class ScheduleAppointment extends Component {
         super()
         this.state = {
             date: "",
-            doctor: this.props.auth.user.id,
+            //doctor: this.props.auth.user.id,
+            doctor: "",
             patient: "",
             errors: {}
         }
