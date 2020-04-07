@@ -46,6 +46,11 @@ function MenuCliente() {
 function MenuMedico() {
   return (
     <ul className="navbar-nav ml-auto">
+        <li className="nav-item">
+            <Link className="nav-link" to={"/doctor/dashboard"}>
+                Dashboard
+            </Link>
+        </li>
       <li className="nav-item">
         <Link className="nav-link" to={"/calendar"}>
           Calendário
