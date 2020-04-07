@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import { logoutUser } from "../../../actions/authActions";
 
 import "./Navbar.css";
+import "../Landing.css"
 
 function MenuCliente() {
   return (
@@ -88,7 +89,7 @@ const Navbar = ({ component: Component, auth, ...rest }) => {
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container">
           <Link className="navbar-brand" to={"/"}>
-            DocBee
+              <span className="text-primary-color">Doc</span><span className="text-secondary-color">Bee</span>
           </Link>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul className="navbar-nav ml-auto">

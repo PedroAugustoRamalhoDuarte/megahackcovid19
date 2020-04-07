@@ -1,10 +1,14 @@
 import React, {Component} from "react"
+import PropTypes from "prop-types";
+import {connect} from "react-redux";
 
 class DoctorDashboard extends Component {
     render() {
+        const { user } = this.props.auth;
+
         return (
             <div>
-                <h1 className="text-center pt-5"> Dashboard Médico</h1>
+                <h1 className="text-center pt-5"> Dashboard de {user.name}</h1>
                 <div className="row">
                     <div className="col statistic-box box shadow bg-white rounded h-100 m-5 p-3">
                         <h4>Número de consultas hoje</h4>
@@ -96,4 +100,13 @@ class DoctorDashboard extends Component {
     }
 }
 
-export default DoctorDashboard
+DoctorDashboard.propTypes = {
+    logoutUser: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+    auth: state.auth,
+});
+
+export default connect(mapStateToProps)(DoctorDashboard);
