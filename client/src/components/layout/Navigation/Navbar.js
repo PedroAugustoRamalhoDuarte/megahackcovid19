@@ -57,6 +57,11 @@ function MenuMedico() {
           Calendário
         </Link>
       </li>
+        <li className="nav-item">
+            <Link className="nav-link" to={"/appointment"}>
+                Nova Consulta
+            </Link>
+        </li>
       <li className="nav-item">
         <Link className="nav-link" to={"/medicoLandPage"}>
           Meu perfil

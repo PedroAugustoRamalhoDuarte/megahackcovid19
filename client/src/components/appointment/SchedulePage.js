@@ -1,13 +1,12 @@
-
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { registerUser } from "../../actions/authActions";
 import classnames from "classnames";
-
-import "./Register.css"
+import "../auth/Register.css"
+import axios from "axios";
+import {GET_ERRORS} from "../../actions/types";
 
 class ScheduleAppointment extends Component {
     constructor() {
@@ -22,8 +21,8 @@ class ScheduleAppointment extends Component {
 
     componentDidMount() {
         // If logged in and user navigates to Register page, should redirect them to dashboard
-        if (this.props.auth.isAuthenticated) {
-            this.props.history.push("/dashboard");
+        if (!this.props.auth.isAuthenticated) {
+            this.props.history.push("/");
         }
     }
 
@@ -53,7 +52,10 @@ class ScheduleAppointment extends Component {
             patient: this.state.patient
         }
 
-        this.props.registerUser(newAppointment, this.props.history);
+        axios.post("http://localhost:5000/appointments", newAppointment)
+            .then(res => console.log("Comsulta Criada com sucesso"))
+            .catch(err => console.log("Não foi possível criar a consulta"));
+        // this.props.registerUser(newAppointment, this.props.history);
     }
 
     render() {
@@ -65,14 +67,13 @@ class ScheduleAppointment extends Component {
                         <h3>Nova consulta</h3>
 
                         <div className="form-group">
-                            <label>Nome</label>
+                            <label>Data e hora da consulta</label>
                             <input
                                 onChange={this.onChange}
                                 value={this.state.date}
                                 error={errors.date}
-                                id="name"
-                                type="datetime"
-                                placeholder="João Lima"
+                                id="date"
+                                type="datetime-local"
                                 className={classnames("form-control", {
                                     invalid: errors.date
                                 })}
@@ -81,74 +82,22 @@ class ScheduleAppointment extends Component {
                         </div>
 
                         <div className="form-group">
-                            <label>Pacient</label>
+                            <label> Nome do paciente </label>
                             <input
                                 onChange={this.onChange}
-                                value={this.state.email}
-                                error={errors.email}
-                                id="email"
-                                type="email"
-                                placeholder="Ex: cliente@email.com"
+                                value={this.state.patient}
+                                error={errors.patient}
+                                id="patient"
+                                type="patient"
+                                placeholder="ID do paciente"
                                 className={classnames("form-control", {
-                                    invalid: errors.email
+                                    invalid: errors.patient
                                 })}
                             />
-                            <span className="red-text">{errors.email}</span>
+                            <span className="red-text">{errors.patient}</span>
                         </div>
 
-                        <div className="form-group">
-                            <label>Senha</label>
-                            <input
-                                onChange={this.onChange}
-                                value={this.state.password}
-                                error={errors.password}
-                                id="password"
-                                type="password"
-                                placeholder="Ex: onb23b423"
-                                className={classnames("form-control", {
-                                    invalid: errors.password
-                                })}
-                            />
-                            <span className="red-text">{errors.password}</span>
-                        </div>
-
-                        <div className="form-group">
-                            <label>Confirmar senha</label>
-                            <input
-                                onChange={this.onChange}
-                                value={this.state.password2}
-                                error={errors.password2}
-                                id="password2"
-                                type="password"
-                                placeholder="Ex: onb23b423"
-                                className={classnames("form-control", {
-                                    invalid: errors.password2
-                                })}
-                            />
-                            <span className="red-text">{errors.password2} </span>
-                        </div>
-
-
-                        <div className="form-group">
-                            <label>Tipo de usúario</label>
-                            <br></br>
-                            <div className="form-check form-check-inline">
-                                <input
-                                    type="radio"
-                                    name="inlineRadioOptions"
-                                    value="paciente"
-                                    checked={this.state.role === "paciente"}
-                                    onChange={this.handleOptionChange}
-                                    className="form-check-input"
-                                />
-                                <label className="form-check-label" htmlFor="pacienteRadio">Paciente</label>
-                            </div>
-                        </div>
-
-                        <button type="submit" className="btn btn-light btn-block">Me cadastrar!</button>
-                        <p className="forgot-password text-right">
-                            Already registered? <Link to={"/register"} >sign in</Link>
-                        </p>
+                        <button type="submit" className="btn btn-light btn-block">Marcar Consulta</button>
                     </form>
                 </div>
             </div>
@@ -156,8 +105,8 @@ class ScheduleAppointment extends Component {
     }
 }
 
-Register.propTypes = {
-    registerUser: PropTypes.func.isRequired,
+ScheduleAppointment.propTypes = {
+    //registerUser: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired,
     errors: PropTypes.object.isRequired
 };
@@ -167,7 +116,4 @@ const mapStateToProps = state => ({
     errors: state.errors
 });
 
-export default connect(
-    mapStateToProps,
-    { registerUser }
-)(withRouter(Register));
+export default connect(mapStateToProps)(withRouter(ScheduleAppointment));
