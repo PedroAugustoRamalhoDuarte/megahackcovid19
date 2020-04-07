@@ -25,12 +25,8 @@ import DrugStore from "./components/dashboard/DrugStore";
 import Calendar from "./components/calendar/Calendar";
 import FarmaciaPerfil from './components/layout/FarmaciaLayout/FarmaciaPerfil'
 import DoctorDashboard from "./components/dashboard/DoctorDashboard";
-<<<<<<< HEAD
 import Receita from './components/layout/ClienteLayout/Receitas/Receita'
-||||||| merged common ancestors
-=======
 import ScheduleAppointment from "./components/appointment/SchedulePage";
->>>>>>> 2be859a47190d4c52637bf6bc7708ba066045450
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {

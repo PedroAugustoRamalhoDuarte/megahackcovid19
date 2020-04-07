@@ -3,10 +3,36 @@ import { Link } from "react-router-dom";
 import { logoutUser } from "../../../actions/authActions";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import { Alert, Button } from 'react-bootstrap'
 
 import "./ClientLayout.css";
 import Remedio from "../../../images/medicine.png";
 import Pharmacy from "../../../images/pharmacy.png";
+import dalacinC from './RemedioControl/images-remedios/dalacinC.png'
+
+function AlertDismissible() {
+  const [show, setShow] = React.useState(true);
+
+
+  return (
+    <div>
+      <Alert show={show} variant="info">
+        <Alert.Heading>Dalacin C</Alert.Heading>
+        <p>
+          Tomar um coprimido.
+        </p>
+        <p><b>12:00</b></p>
+        <hr />
+        <div className="d-flex justify-content-end">
+          <Button onClick={() => setShow(false)} variant="outline-primary">
+            Tomado!
+          </Button>
+        </div>
+      </Alert>
+    </div>
+  );
+}
+
 
 // Navigation
 function Artefatos() {
@@ -39,15 +65,15 @@ function Artefatos() {
               borderRadius: "21px 21px 0 0",
             }}
           >
-          <div>
-          <Link to={"/analiseRemedio"}>
-            <img
-              className="remedio-image"
-              src={Remedio}
-              alt="remedio logo"
-            />
-          </Link>
-        </div>
+            <div>
+              <Link to={"/analiseRemedio"}>
+                <img
+                  className="remedio-image"
+                  src={Remedio}
+                  alt="remedio logo"
+                />
+              </Link>
+            </div>
           </div>
         </div>
 
@@ -153,6 +179,7 @@ class ClientLandpage extends Component {
   render() {
     return (
       <div>
+        <AlertDismissible />
         <Artefatos />
       </div>
     );
