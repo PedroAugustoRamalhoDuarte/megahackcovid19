@@ -1,4 +1,5 @@
-import React, {Component} from "react"
+import React, { Component } from "react"
+import { Link } from "react-router-dom";
 
 // Import Style
 import "./Teste.css"
@@ -23,27 +24,27 @@ class Landing extends Component {
                             <h1 className="masthead-heading mb-0"><span className="">DOC</span><span
                                 className="">BEE</span></h1>
                             <h2 className="masthead-subheading mb-0">Venha fazer parte dessa transformação!</h2><a
-                            className="btn btn-primary btn-xl rounded-pill mt-5" role="button" href="#">Conheça Mais</a>
+                                className="btn btn-primary btn-xl rounded-pill mt-5" role="button" href="#">Conheça Mais</a>
                         </div>
                     </div>
-                    <div className="bg-circle-1 bg-circle"/>
-                    <div className="bg-circle-2 bg-circle"/>
-                    <div className="bg-circle-3 bg-circle"/>
-                    <div className="bg-circle-4 bg-circle"/>
+                    <div className="bg-circle-1 bg-circle" />
+                    <div className="bg-circle-2 bg-circle" />
+                    <div className="bg-circle-3 bg-circle" />
+                    <div className="bg-circle-4 bg-circle" />
                 </header>
                 <h1 className="text-success pt-5" > Soluções</h1>
                 <section>
                     <div className="container">
                         <div className="row align-items-center">
                             <div className="col-lg-6 order-lg-2">
-                                <div className="p-5"><img className="rounded-circle img-fluid" src={VideoCallImage} alt="Imagem de video chaamada"/>
+                                <div className="p-5"><img className="rounded-circle img-fluid" src={VideoCallImage} alt="Imagem de video chaamada" />
                                 </div>
                             </div>
                             <div className="col-lg-6 order-lg-1">
                                 <div className="p-5">
                                     <h2 className="display-4">Consultas em Vídeo</h2>
                                     <p>Para conectar médicos e pacientes à distância,
-                                        serão realizadas consultas em vídeo com alta
+                                    serão realizadas consultas em vídeo com alta
                                         resolução</p>
                                 </div>
                             </div>
@@ -54,16 +55,16 @@ class Landing extends Component {
                     <div className="container">
                         <div className="row align-items-center">
                             <div className="col-lg-6 order-lg-1">
-                                <div className="p-5"><img className="rounded-circle img-fluid" src={PrescriptionImage} alt="Prescrição de medicamentos"/>
+                                <div className="p-5"><img className="rounded-circle img-fluid" src={PrescriptionImage} alt="Prescrição de medicamentos" />
                                 </div>
                             </div>
                             <div className="col-lg-6 order-lg-2">
                                 <div className="p-5">
                                     <h2 className="display-4">Prescrição de
-                                        Medicamentos e Pedidos
+                                    Medicamentos e Pedidos
                                         de Exames Remotos</h2>
                                     <p>Para prescrever medicamentos controlados e
-                                        solicitar pedidos de exames remotamente, serão
+                                    solicitar pedidos de exames remotamente, serão
                                         utilizados Certificados Digitais</p>
                                 </div>
                             </div>
@@ -74,7 +75,7 @@ class Landing extends Component {
                     <div className="container">
                         <div className="row align-items-center">
                             <div className="col-lg-6 order-lg-2">
-                                <div className="p-5"><img className="rounded-circle img-fluid" src={CoinsImage} alt="Imagem representando ofertas"/>
+                                <div className="p-5"><img className="rounded-circle img-fluid" src={CoinsImage} alt="Imagem representando ofertas" />
                                 </div>
                             </div>
                             <div className="col-lg-6 order-lg-1">
@@ -82,7 +83,7 @@ class Landing extends Component {
                                     <h2 className="display-4">Melhores Ofertas de
                                         Medicamentos</h2>
                                     <p>O paciente poderá consultar o valor de seus
-                                        medicamentos nas farmácias mais próximas e
+                                    medicamentos nas farmácias mais próximas e
                                         encontrar as melhores ofertas</p>
                                 </div>
                             </div>
@@ -93,7 +94,7 @@ class Landing extends Component {
                     <div className="container">
                         <div className="row align-items-center">
                             <div className="col-lg-6 order-lg-1">
-                                <div className="p-5"><img className="rounded-circle img-fluid" src={DeliveryImage} alt="Imagem de um caminhão representando entregas"/>
+                                <div className="p-5"><img className="rounded-circle img-fluid" src={DeliveryImage} alt="Imagem de um caminhão representando entregas" />
                                 </div>
                             </div>
                             <div className="col-lg-6 order-lg-2">
@@ -110,14 +111,14 @@ class Landing extends Component {
                     <div className="container">
                         <div className="row align-items-center">
                             <div className="col-lg-6 order-lg-2">
-                                <div className="p-5"><img className="rounded-circle img-fluid" src={NotificationImage} alt="Imagem de um sno com notificação"/>
+                                <div className="p-5"><img className="rounded-circle img-fluid" src={NotificationImage} alt="Imagem de um sno com notificação" />
                                 </div>
                             </div>
                             <div className="col-lg-6 order-lg-1">
                                 <div className="p-5">
                                     <h2 className="display-4">Lembretes Automáticos</h2>
                                     <p>Para facilitar a adesão do paciente ao tratamento,
-                                        poderão ser criados lembretes automáticos em
+                                    poderão ser criados lembretes automáticos em
                                         seu celular para o uso dos medicamentos</p>
                                 </div>
                             </div>
@@ -128,14 +129,14 @@ class Landing extends Component {
                     <div className="container">
                         <div className="row align-items-center">
                             <div className="col-lg-6 order-lg-1">
-                                <div className="p-5"><img className="rounded-circle img-fluid" src={CloudImage} alt="Imagem representando armazenamento na nuvem"/>
+                                <div className="p-5"><img className="rounded-circle img-fluid" src={CloudImage} alt="Imagem representando armazenamento na nuvem" />
                                 </div>
                             </div>
                             <div className="col-lg-6 order-lg-2">
                                 <div className="p-5">
                                     <h2 className="display-4">Armazenamento em Nuvem</h2>
                                     <p>As prescrições de medicamentos poderão ser
-                                        armazenadas na nuvem, evitando a necessidade
+                                    armazenadas na nuvem, evitando a necessidade
                                         de seu armazenamento físico por anos</p>
                                 </div>
                             </div>
@@ -144,6 +145,68 @@ class Landing extends Component {
                 </section>
                 <h1 className="text-secondary-color" > TUDO ISSO, E MUITO MAIS, EM
                     APENAS UMA PLATAFORMA </h1>
+
+                <footer className="container py-5">
+                    <div className="row">
+                        <div className="col-12 col-md">
+                            <p>DocBe!</p>
+                            <small className="d-block mb-3 text-muted">© 2020-2021</small>
+                        </div>
+
+                        <div className="col-6 col-md">
+                            <h5>Sobre</h5>
+                            <ul className="list-unstyled text-small">
+                                <li>
+                                    <Link className="text-muted" to={"/"}>
+                                        Time
+                            </Link>
+                                </li>
+                                <li>
+                                    <Link className="text-muted" to={"/"}>
+                                        Localização
+                            </Link>
+                                </li>
+                                <li>
+                                    <Link className="text-muted" to={"/"}>
+                                        Privacidade
+                            </Link>
+                                </li>
+                                <li>
+                                    <Link className="text-muted" to={"/"}>
+                                        Termos
+                            </Link>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div className="col-6 col-md">
+                            <h5>Contato</h5>
+                            <ul className="list-unstyled text-small">
+                                <li>
+                                    <Link className="text-muted" to={"/"}>
+                                        Instagram
+                            </Link>
+                                </li>
+                                <li>
+                                    <Link className="text-muted" to={"/"}>
+                                        Facebook
+                            </Link>
+                                </li>
+                                <li>
+                                    <Link className="text-muted" to={"/"}>
+                                        Github
+                            </Link>
+                                </li>
+                                <li>
+                                    <Link className="text-muted" to={"/"}>
+                                        Youtube
+                            </Link>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </footer>
+
             </div>
         )
     }

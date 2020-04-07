@@ -79,7 +79,7 @@ function Artefatos() {
       <footer className="container py-5">
         <div className="row">
           <div className="col-12 col-md">
-            <p>Splash!</p>
+            <p>DocBe!</p>
             <small className="d-block mb-3 text-muted">© 2020-2021</small>
           </div>
 

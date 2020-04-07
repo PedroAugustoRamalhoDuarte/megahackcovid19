@@ -28,8 +28,10 @@ function Artefatos() {
                                     <p className="card-text"><b>Utilização: </b>Tomar 3x de 8 em 8 horas</p>
                                     <div className="d-flex justify-content-between align-items-center">
                                         <div className="btn-group">
-                                            <button type="button" className="btn btn-sm btn-outline-secondary">View</button>
-                                            <button type="button" className="btn btn-sm btn-outline-secondary">Edit</button>
+                                            <Link to={'/receita'}>
+                                                <button type="button" className="btn btn-sm btn-outline-primary">Receita</button>
+                                            </Link>
+                                            <button type="button" className="btn btn-sm btn-outline-primary">Editar horário</button>
                                         </div>
                                         <small className="text-muted">Até 30/04/2020</small>
                                     </div>
@@ -45,8 +47,8 @@ function Artefatos() {
                                     <p className="card-text"><b>Utilização: </b>Tomar 2x de 12 em 12 horas</p>
                                     <div className="d-flex justify-content-between align-items-center">
                                         <div className="btn-group">
-                                            <button type="button" className="btn btn-sm btn-outline-secondary">View</button>
-                                            <button type="button" className="btn btn-sm btn-outline-secondary">Edit</button>
+                                            <button type="button" className="btn btn-sm btn-outline-primary">Receita</button>
+                                            <button type="button" className="btn btn-sm btn-outline-primary">Editar horário</button>
                                         </div>
                                         <small className="text-muted">Até 20/03/2020</small>
                                     </div>
@@ -62,8 +64,8 @@ function Artefatos() {
                                     <p className="card-text"><b>Utilização: </b>Tomar 1x ao dia</p>
                                     <div className="d-flex justify-content-between align-items-center">
                                         <div className="btn-group">
-                                            <button type="button" className="btn btn-sm btn-outline-secondary">View</button>
-                                            <button type="button" className="btn btn-sm btn-outline-secondary">Edit</button>
+                                            <button type="button" className="btn btn-sm btn-outline-primary">Receita</button>
+                                            <button type="button" className="btn btn-sm btn-outline-primary">Editar horário</button>
                                         </div>
                                         <small className="text-muted">Até 31/05/2020</small>
                                     </div>
@@ -80,6 +82,7 @@ function Artefatos() {
                                     <p className="card-text"><b>Utilização: </b>Tomar 3x de 8 em 8 horas</p>
                                     <div className="d-flex justify-content-between align-items-center">
                                         <div className="btn-group">
+                                            <button type="button" className="btn btn-sm btn-outline-primary">Receita</button>
                                             <button type="button" className="btn btn-sm btn-danger">Terminado</button>
                                         </div>
                                         <small className="text-muted">Até 30/04/2020</small>
@@ -96,6 +99,7 @@ function Artefatos() {
                                     <p className="card-text"><b>Utilização: </b>Tomar 3x de 8 em 8 horas</p>
                                     <div className="d-flex justify-content-between align-items-center">
                                         <div className="btn-group">
+                                            <button type="button" className="btn btn-sm btn-outline-primary">Receita</button>
                                             <button type="button" className="btn btn-sm btn-danger">Terminado</button>
                                         </div>
                                         <small className="text-muted">Até 30/04/2020</small>
@@ -112,6 +116,7 @@ function Artefatos() {
                                     <p className="card-text"><b>Utilização: </b>Tomar 3x de 8 em 8 horas</p>
                                     <div className="d-flex justify-content-between align-items-center">
                                         <div className="btn-group">
+                                            <button type="button" className="btn btn-sm btn-outline-primary">Receita</button>
                                             <button type="button" className="btn btn-sm btn-danger">Terminado</button>
                                         </div>
                                         <small className="text-muted">Até 30/04/2020</small>
@@ -129,6 +134,7 @@ function Artefatos() {
                                     <p className="card-text"><b>Utilização: </b>Tomar 3x de 8 em 8 horas</p>
                                     <div className="d-flex justify-content-between align-items-center">
                                         <div className="btn-group">
+                                            <button type="button" className="btn btn-sm btn-outline-primary">Receita</button>
                                             <button type="button" className="btn btn-sm btn-danger">Terminado</button>
                                         </div>
                                         <small className="text-muted">Até 30/04/2020</small>
@@ -145,6 +151,7 @@ function Artefatos() {
                                     <p className="card-text"><b>Utilização: </b>Tomar 3x de 8 em 8 horas</p>
                                     <div className="d-flex justify-content-between align-items-center">
                                         <div className="btn-group">
+                                            <button type="button" className="btn btn-sm btn-outline-primary">Receita</button>
                                             <button type="button" className="btn btn-sm btn-danger">Terminado</button>
                                         </div>
                                         <small className="text-muted">Até 30/04/2020</small>
@@ -161,6 +168,7 @@ function Artefatos() {
                                     <p className="card-text"><b>Utilização: </b>Tomar 3x de 8 em 8 horas</p>
                                     <div className="d-flex justify-content-between align-items-center">
                                         <div className="btn-group">
+                                            <button type="button" className="btn btn-sm btn-outline-primary">Receita</button>
                                             <button type="button" className="btn btn-sm btn-danger">Terminado</button>
                                         </div>
                                         <small className="text-muted">Até 30/04/2020</small>
@@ -175,7 +183,7 @@ function Artefatos() {
             <footer className="container py-5">
                 <div className="row">
                     <div className="col-12 col-md">
-                        <p>Splash!</p>
+                        <p>DocBe!</p>
                         <small className="d-block mb-3 text-muted">© 2020-2021</small>
                     </div>
 

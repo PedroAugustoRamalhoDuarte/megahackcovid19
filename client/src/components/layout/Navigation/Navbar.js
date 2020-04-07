@@ -27,12 +27,7 @@ function MenuCliente() {
       </li>
       <li className="nav-item">
         <Link className="nav-link" to={"/"}>
-          Médicos cadastrados
-        </Link>
-      </li>
-      <li className="nav-item">
-        <Link className="nav-link" to={"/"}>
-          Farmácias cadastradas
+          Dúvidas
         </Link>
       </li>
       <li className="nav-item">

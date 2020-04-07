@@ -25,6 +25,7 @@ import DrugStore from "./components/dashboard/DrugStore";
 import Calendar from "./components/calendar/Calendar";
 import FarmaciaPerfil from './components/layout/FarmaciaLayout/FarmaciaPerfil'
 import DoctorDashboard from "./components/dashboard/DoctorDashboard";
+import Receita from './components/layout/ClienteLayout/Receitas/Receita'
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -80,6 +81,12 @@ class App extends Component {
                 exact
                 path="/remedioControl"
                 component={RemedioControl}
+              />
+              <PrivateRoute
+                condition="paciente"
+                exact
+                path="/receita"
+                component={Receita}
               />
               <PrivateRoute
                 condition="medico"
