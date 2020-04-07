@@ -37,6 +37,9 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "runtimeArgs": [
+    "--max-old-space-size=4096"
+  ],
   "browserslist": [
     ">0.2%",
     "not dead",
