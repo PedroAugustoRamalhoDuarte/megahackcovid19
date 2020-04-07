@@ -5,15 +5,21 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import classnames from "classnames";
 import "../auth/Register.css"
-import axios from "axios";
-import {GET_ERRORS} from "../../actions/types";
+import { storeAppointment} from "../../actions/userActions";
+import {registerUser} from "../../actions/authActions";
+
+const options = [
+    { value: 'chocolate', label: 'Chocolate' },
+    { value: 'strawberry', label: 'Strawberry' },
+    { value: 'vanilla', label: 'Vanilla' },
+];
 
 class ScheduleAppointment extends Component {
     constructor() {
         super()
         this.state = {
             date: "",
-            doctor: "",
+            doctor: this.props.auth.user.id,
             patient: "",
             errors: {}
         }
@@ -48,14 +54,16 @@ class ScheduleAppointment extends Component {
         e.preventDefault()
         const newAppointment = {
             date: this.state.name,
-            doctor: this.state.cotor,
+            doctor: this.state.doctor,
             patient: this.state.patient
         }
 
-        axios.post("http://localhost:5000/appointments", newAppointment)
-            .then(res => console.log("Comsulta Criada com sucesso"))
-            .catch(err => console.log("Não foi possível criar a consulta"));
-        // this.props.registerUser(newAppointment, this.props.history);
+
+        //axios.post("http://localhost:5000/appointments", newAppointment)
+         //   .then(res => console.log("Comsulta Criada com sucesso"))
+          //  .catch(err => console.log("Não foi possível criar a consulta"));
+
+        this.props.storeAppointment(newAppointment, this.props.history);
     }
 
     render() {
@@ -106,7 +114,7 @@ class ScheduleAppointment extends Component {
 }
 
 ScheduleAppointment.propTypes = {
-    //registerUser: PropTypes.func.isRequired,
+    storeAppointment: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired,
     errors: PropTypes.object.isRequired
 };
@@ -116,4 +124,4 @@ const mapStateToProps = state => ({
     errors: state.errors
 });
 
-export default connect(mapStateToProps)(withRouter(ScheduleAppointment));
+export default connect(mapStateToProps, { storeAppointment })(withRouter(ScheduleAppointment));

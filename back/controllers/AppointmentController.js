@@ -24,13 +24,17 @@ module.exports = {
     async store(request, response) {
         const {date, doctor, patient, drugs} = request.body;
         let appointment;
+        try{
         appointment = await AppointmentController.create({
                 date,
                 doctor,
                 patient,
                 drugs,
             });
+            return response.json(appointment);
+        } catch (e) {
+           return response.json({error: e});
+        }
 
-        return response.json(appointment);
     },
 };

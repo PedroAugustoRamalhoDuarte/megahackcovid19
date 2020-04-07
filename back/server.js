@@ -2,11 +2,12 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
+const cors = require('cors');
 
 const users = require("./routes/user");
 const drug = require('./routes/drug');
 const email = require('./routes/email');
-
+const appointments = require("./routes/appointmentRoutes")
 const app = express();
 
 // Bodyparser middleware
@@ -25,6 +26,9 @@ mongoose
   .then(() => console.log("MongoDB successfully connected"))
   .catch(err => console.log(err));
 
+// Cors
+app.use(cors());
+
 // Passport middleware
 app.use(passport.initialize());
 
@@ -35,6 +39,7 @@ require("./config/passport")(passport);
 app.use("/users", users);
 app.use("/drug", drug);
 app.use("/emails", email);
+app.use("", appointments);
 
 const port = process.env.PORT || 5000;
 
