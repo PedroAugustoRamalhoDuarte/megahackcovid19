@@ -27,6 +27,7 @@ import FarmaciaPerfil from './components/layout/FarmaciaLayout/FarmaciaPerfil'
 import DoctorDashboard from "./components/dashboard/DoctorDashboard";
 import Receita from './components/layout/ClienteLayout/Receitas/Receita'
 import ScheduleAppointment from "./components/appointment/SchedulePage";
+import Chatbot from './components/layout/ClienteLayout/Chatbot/Chatbot'
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -93,6 +94,12 @@ class App extends Component {
                 exact
                 path="/receita"
                 component={Receita}
+              />
+              <PrivateRoute
+                condition="paciente"
+                exact
+                path="/chatbot"
+                component={Chatbot}
               />
               <PrivateRoute
                 condition="medico"
